@@ -1,0 +1,6 @@
+[build]
+builder = "nixpacks"
+buildCommand = "yarn workspace @dtc/backend build"
+
+[deploy]
+startCommand = "yarn workspace @dtc/backend start"
