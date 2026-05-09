@@ -4,7 +4,7 @@ loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
 module.exports = defineConfig({
   admin: {
-    disable: process.env.DISABLE_ADMIN === "true",
+    disable: process.env.NODE_ENV === "production" ? true : false,
     backendUrl: process.env.MEDUSA_BACKEND_URL || "https://moncatu-backend-production.up.railway.app",
   },
   projectConfig: {
