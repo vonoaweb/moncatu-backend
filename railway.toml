@@ -3,4 +3,4 @@ builder = "nixpacks"
 buildCommand = "yarn workspace @dtc/backend build"
 
 [deploy]
-startCommand = "yarn workspace @dtc/backend run start:prod"
+startCommand = "cd apps/backend && npx medusa db:migrate && npx medusa start -p 9000 -h 0.0.0.0"
