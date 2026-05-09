@@ -1,0 +1,9 @@
+{
+	"cli": {
+		"packageManager": "pnpm"
+	},
+	"telemetry": {
+		"enabled": false,
+		"machine_id": "5f866682-78f2-41ca-a3d2-82146da13787"
+	}
+}
