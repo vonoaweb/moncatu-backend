@@ -3,4 +3,6 @@ builder = "nixpacks"
 buildCommand = "yarn workspace @dtc/backend build"
 
 [deploy]
-startCommand = "yarn workspace @dtc/backend start"
+startCommand = "yarn workspace @dtc/backend medusa db:migrate && yarn workspace @dtc/backend start"
+healthCheckPath = "/health"
+healthCheckTimeout = 120
