@@ -4,3 +4,5 @@ buildCommand = "yarn workspace @dtc/backend build"
 
 [deploy]
 startCommand = "yarn workspace @dtc/backend run start:prod"
+healthcheckPath = "/health"
+healthcheckTimeout = 300
