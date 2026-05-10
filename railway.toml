@@ -1,9 +1,6 @@
 [build]
 builder = "nixpacks"
-buildCommand = "yarn workspace @dtc/backend build"
-
-[build.nixpacks]
-noCache = true
+buildCommand = "DISABLE_ADMIN=false yarn workspace @dtc/backend build"
 
 [deploy]
 startCommand = "yarn workspace @dtc/backend run start:prod"
