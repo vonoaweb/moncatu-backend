@@ -2,6 +2,9 @@
 builder = "nixpacks"
 buildCommand = "yarn workspace @dtc/backend build"
 
+[build.nixpacks]
+noCache = true
+
 [deploy]
 startCommand = "yarn workspace @dtc/backend run start:prod"
 healthcheckPath = "/health"
