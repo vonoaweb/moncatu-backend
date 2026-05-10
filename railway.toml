@@ -1,6 +1,6 @@
 [build]
 builder = "nixpacks"
-buildCommand = "DISABLE_ADMIN=false yarn workspace @dtc/backend build"
+buildCommand = "DISABLE_ADMIN=false yarn workspace @dtc/backend build && echo '=== Admin Build Check ===' && (find apps/backend/.medusa -name 'index.html' 2>/dev/null | head -3 && echo 'ADMIN FILES FOUND') || echo 'WARNING: No admin files in apps/backend/.medusa'"
 
 [deploy]
 startCommand = "yarn workspace @dtc/backend run start:prod"
