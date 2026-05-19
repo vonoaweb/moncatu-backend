@@ -28,23 +28,23 @@ export async function POST(req: MedusaRequest, res: MedusaResponse) {
 
     const siteUrl = process.env.SITE_URL || "https://moncatu.com";
 
-    const preferenceItems = items.map((item) => ({
+    const preferenceItems: any[] = items.map((item, idx) => ({
+      id: String(idx + 1),
       title: String(item.title).slice(0, 256),
       unit_price: Number(item.unit_price),
       quantity: Number(item.quantity),
-      currency_id: "MXN" as const,
+      currency_id: "MXN",
       picture_url: item.picture_url || undefined,
       description: item.description ? String(item.description).slice(0, 256) : undefined,
     }));
 
     if (shipping && shipping.cost > 0) {
       preferenceItems.push({
+        id: "shipping",
         title: "Envío",
         unit_price: Number(shipping.cost),
         quantity: 1,
-        currency_id: "MXN" as const,
-        picture_url: undefined,
-        description: undefined,
+        currency_id: "MXN",
       });
     }
 
